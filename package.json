@@ -1,13 +1,13 @@
 {
   "name": "generator-mvcss",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.0.2",
+  "description": "Yeoman generator for MVCSS",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "alepop/generator-mvcss",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "Aleksey Popov",
+    "email": "alepooop@gmail.com",
     "url": "https://github.com/alepop"
   },
   "engines": {
@@ -20,7 +20,12 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "mvcss",
+    "stylesheets",
+    "front-end",
+    "scss",
+    "sass"
   ],
   "dependencies": {
     "yeoman-generator": "~0.16.0",

@@ -17,37 +17,35 @@ var MvcssGenerator = yeoman.generators.Base.extend({
     });
   },
 
-  askFor: function () {
-    var done = this.async();
+  // askFor: function () {
+  //   var done = this.async();
+  //
+  //   // Have Yeoman greet the user.
+  //   var prompts = [{
+  //     type: 'confirm',
+  //     name: 'someOption',
+  //     message: 'Would you like to enable this option?',
+  //     default: true
+  //   }];
+  //
+  //   this.prompt(prompts, function (props) {
+  //     this.someOption = props.someOption;
+  //
+  //     done();
+  //   }.bind(this));
+  // },
 
-    // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous Mvcss generator!'));
-
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
-
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
-    }.bind(this));
-  },
-
-  app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+  projectFolders: function () {
+    this.mkdir('core');
+    this.mkdir('modules');
 
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
   },
 
-  projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
+  projectFiles: function () {
+    this.copy('_application.sass', 'applications.sass');
+    this.directory('core', 'core')
   }
 });
 
