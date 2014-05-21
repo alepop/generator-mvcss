@@ -4,7 +4,10 @@
   "description": "Yeoman generator for MVCSS",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "alepop/generator-mvcss",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alepop/generator-mvcss.git"
+  },
   "author": {
     "name": "Aleksey Popov",
     "email": "alepooop@gmail.com",
