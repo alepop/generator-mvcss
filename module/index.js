@@ -10,8 +10,9 @@ var ModuleGenerator = yeoman.generators.NamedBase.extend({
   addToApplication: function(){
     var path = 'applications.sass',
         file = this.readFileAsString(path),
+        targetStr = "//#don't delete this line#",
         insert = '@import "modules/' + this.name + '"';
-    this.write(path, file + insert)
+    this.write(path, file.replace(targetStr, insert + '\n' + targetStr));
   }
 });
 

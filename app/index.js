@@ -16,20 +16,30 @@ var MvcssGenerator = yeoman.generators.Base.extend({
       }
     });
   },
-
+  // 
   // askFor: function () {
   //   var done = this.async();
   //
   //   // Have Yeoman greet the user.
   //   var prompts = [{
-  //     type: 'confirm',
-  //     name: 'someOption',
-  //     message: 'Would you like to enable this option?',
-  //     default: true
+  //     type: 'list',
+  //     name: 'cssLibrary',
+  //     message: 'What library you want to use?',
+  //     choices: [{
+  //       name: 'Compass',
+  //       value: 'compass'
+  //     }, {
+  //       name: 'Bourbon',
+  //       value: 'bourbon'
+  //     },{
+  //       name: 'None',
+  //       value: 'none'
+  //     }],
+  //   default: 0
   //   }];
   //
   //   this.prompt(prompts, function (props) {
-  //     this.someOption = props.someOption;
+  //     this.cssLibrary = props.cssLibrary;
   //
   //     done();
   //   }.bind(this));
