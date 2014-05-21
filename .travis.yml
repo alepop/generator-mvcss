@@ -1,0 +1,7 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-mvcss' ]; then cd .. && eval "mv $currentfolder generator-mvcss" && cd generator-mvcss; fi
+
