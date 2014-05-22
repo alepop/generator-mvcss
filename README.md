@@ -14,7 +14,7 @@ $ yo mvcss
 And finally to add the module execute this command:
 
 ```bash
-$ yo mvcss:<module name>
+$ yo mvcss:module <module name>
 ```
 
 More information about MVCSS you can read [here](http://mvcss.github.io/)
