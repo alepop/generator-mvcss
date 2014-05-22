@@ -1,13 +1,9 @@
 {
   "name": "generator-mvcss",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Yeoman generator for MVCSS",
   "license": "MIT",
   "main": "app/index.js",
-  "files": [
-    "app",
-    "module"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/alepop/generator-mvcss.git"
@@ -24,7 +20,8 @@
     "test": "mocha"
   },
   "files": [
-    "app"
+    "app",
+    "module"
   ],
   "keywords": [
     "yeoman-generator",
