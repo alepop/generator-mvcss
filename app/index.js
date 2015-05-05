@@ -7,55 +7,33 @@ var chalk = require('chalk');
 
 
 var MvcssGenerator = yeoman.generators.Base.extend({
-  init: function () {
+  constructor: function() {
+    yeoman.generators.Base.apply(this, arguments);
+    this.argument('appname', { type: String, required: false });
+    this.appname = this.appname || path.basename(process.cwd());
+  },
+  init: function() {
     this.pkg = require('../package.json');
 
-    this.on('end', function () {
+    this.on('end', function() {
       if (!this.options['skip-install']) {
         this.installDependencies();
       }
     });
   },
-  // 
-  // askFor: function () {
-  //   var done = this.async();
-  //
-  //   // Have Yeoman greet the user.
-  //   var prompts = [{
-  //     type: 'list',
-  //     name: 'cssLibrary',
-  //     message: 'What library you want to use?',
-  //     choices: [{
-  //       name: 'Compass',
-  //       value: 'compass'
-  //     }, {
-  //       name: 'Bourbon',
-  //       value: 'bourbon'
-  //     },{
-  //       name: 'None',
-  //       value: 'none'
-  //     }],
-  //   default: 0
-  //   }];
-  //
-  //   this.prompt(prompts, function (props) {
-  //     this.cssLibrary = props.cssLibrary;
-  //
-  //     done();
-  //   }.bind(this));
-  // },
 
-  projectFolders: function () {
-    this.mkdir('core');
-    this.mkdir('modules');
-
+  projectFolders: function() {
+    this.mkdir('foundation');
+    this.mkdir('components');
+    this.mkdir('structures');
     this.copy('_package.json', 'package.json');
     this.copy('_bower.json', 'bower.json');
   },
 
-  projectFiles: function () {
-    this.copy('_application.sass', 'applications.sass');
-    this.directory('core', 'core')
+  projectFiles: function() {
+    this.template('_application.sass', 'applications.sass');
+    this.directory('foundation', 'foundation')
+    this.directory('components', 'components')
   }
 });
 
